@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.5.16.js"></script>
+</head>
+<body>
+  <!-- {{ }} 是插入指令 -->
+   <div id="app">
+      <!-- v-text指令 会把元素里面的内容替换掉 -->
+     <p v-text="msg">123</p>
+     <!-- 使用 v-cloak指令 来解决 插值表达式闪烁问题 -->
+     <p v-cloak>123{{msg}}456</p>
+    </div>
+  <script>
+    const vum=new Vue({
+      el:'#app',
+      data:{
+        msg:"这是一个首页"
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.5.16.js"></script>
+ 
+</head>
+<body>
+   <div id="app">
+     <input type="text" v-model="name">
+     <button @click="add">添加</button>
+
+     <ul>
+       <li v-for="(item,i) in arr" :key="item.id">
+          <input type="checkbox">{{item.id}}-----{{item.name}}
+       </li>
+      
+     </ul>
+   </div>
+   <script>
+     const vm=new Vue({
+       el:"#app",
+       data:{
+         name:'',
+          arr:[
+            {id:1,name:'嬴政'},
+            {id:2,name:'李斯'},
+            {id:3,name:'赵姬'}
+          ]
+         
+       },
+       methods:{
+         add(){
+           const newStr={id:this.arr.length+1,name:this.name}
+           this.arr.push(newStr)
+         }
+        }
+     })
+   </script>
+</body>
+</html>

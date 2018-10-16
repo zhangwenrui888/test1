@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.5.16.js"></script>
+</head>
+<body>
+  <div id="app">
+  <button @click="lang">浪起来</button>
+   <button>别浪</button>
+   <h1>{{msg}}</h1>
+  </div>
+  <script>
+    const vm=new Vue({
+      el:"#app",
+      data:{
+        msg:"稳住，我们能赢",
+        info:'瓦塔西'
+      },
+      methods:{
+     lang(){
+       console.log(this.msg)
+       this.test()
+     },
+     test(){
+       console.log('这是test方法')
+     }
+      }
+    })
+  </script>
+</body>
+</html>

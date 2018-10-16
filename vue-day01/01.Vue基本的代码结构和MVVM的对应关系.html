@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--1 导入vue包 -->
+  <script src="./lib/vue-2.5.16.js"></script>
+</head>
+<body>
+  <!-- 2 这是创建了一个容器，将来 Vue 就会控制整个 容器中所有的 代码 -->
+  <div id="app">{{title}}<br>
+             {{content}}</div>
+  <script>
+    // 3.new一个vue实例
+    var vm=new Vue({
+      el:'#app', 
+      data:{
+        title:'张三',
+        content:'张三的兄弟'
+      }
+    })
+  </script>
+</body>
+</html>

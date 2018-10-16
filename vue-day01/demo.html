@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function outer(){
+    //     var num1 = 2;
+    //     function inner(){
+    //      var num2 = 1;
+    //     alert (num1 + num2);
+    //     }
+    //     return inner;
+    //     }
+    //    console.log( outer())
+    // 打印出结果1,2,3,4,5,
+//     for (let i = 1; i <= 5; i++) {
+
+//    setTimeout( function timer() {
+
+//      console.log(i);
+
+//   }, 1000 );
+
+//  }  
+// for (var i = 1; i <= 5; i++) {
+
+//     (function(i){
+
+//         setTimeout( function timer() {
+
+//               console.log(i);
+
+//           },  1000 );
+
+//     })(i);
+
+// }
+toggle(fn, fn)
+
+$("td").toggle(
+function(){
+$(this).addClass("selected");
+},
+function(){
+$(this).removeClass("selected");
+ }
+)
+</script>
+</body>
+</html>

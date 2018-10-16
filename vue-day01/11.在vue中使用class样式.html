@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.5.16.js"></script>
+  <style>
+     .size{
+       font-size: 50px;
+     }
+     .thin{
+       font-weight: 200;
+     }
+     .italic{
+       font-style:italic;
+     }
+     .red{
+       color:red
+     }
+     .underline{
+       text-decoration:underline;
+     }
+  </style>
+</head>
+<body>
+   <div id="app">
+    <h1 class="size thin italic red underline">这是一个大大的案例</h1>
+    <hr>
+    <h1 :class="['size','thin']">这是一个大大的案例</h1>
+    <hr>
+    <h1 :class="['size',flag ?'thin':' ']">这是一个大大的案例</h1>
+   </div>
+   <script>
+     const vm=new Vue({
+       el:"#app",
+       data:{
+         flag:true
+          },
+       methods:{ }
+     })
+   </script>
+</body>
+</html>

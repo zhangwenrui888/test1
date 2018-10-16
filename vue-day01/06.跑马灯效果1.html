@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./lib/vue-2.5.16.js"></script>
+</head>
+<body>
+  <div id="app">
+  <button @click="lang">浪起来</button>
+   <button @click="stop">别浪</button>
+   <h1>{{msg}}</h1>
+  </div>
+  <script>
+    const vm=new Vue({
+      el:"#app",
+      data:{
+        msg:"稳住，我们能赢",
+        interId:null
+      },
+      methods:{
+       lang(){
+
+         if(this.interId!==null) return;
+        // 这个方法可以，但是不是最优的
+        // clearInterval(this.interId)
+        // //  如果共享多个数据，需要把数据挂到data内面
+          this.interId=setInterval(()=>{
+            const header=this.msg.slice(0,1)
+            const footer=this.msg.slice(1)
+            const newMsg=footer+header
+        // 当为this.msg 重新赋值成功以后，vm上的数据就变化了
+        // 接下来，vm调度者 就会监听到msg数据的变化，然后重新 解析执行el控制的区域内，所有指令
+            this.msg=newMsg
+           },500)
+         },
+        //  点击清除定时器
+         stop(){
+           clearInterval(this.interId)
+           this.interId=null
+         }
+    
+      }
+    })
+  </script>
+</body>
+</html>
